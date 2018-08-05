@@ -16,13 +16,13 @@
             })
             $('button').click(function () {
                 var city = $("#city").val();
-                $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&&appid=fbce7df393a3e510aa1b6814249ea5f0', function (res) {
+                $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&&appid=fbce7df393a3e510aa1b6814249ea5f0', function (res) {
                     console.log(res);
                     var html = "";
                     var fahrenheit = Math.round(res.main.temp * (9 / 5) - 459.67);
                     html += "<h2>Current weather in " + res.name + "</h2>";
                     html += "<h4>Temperature: " + fahrenheit + ' F</h4>';
-                    html += "<h5>" + res.weather[0].main + '</h5> <img src="http://openweathermap.org/img/w/' + res.weather[0].icon + '.png">';
+                    html += "<h5>" + res.weather[0].main + '</h5> <img src="https://openweathermap.org/img/w/' + res.weather[0].icon + '.png">';
                     $('#weather').html(html);
                 }, 'json');
                 $('input').val('');
@@ -64,8 +64,7 @@
 
 <body>
     <center class="container">
-        <h1>
-            <i class="fas fa-bolt"></i> Weather Forecast App</h1>
+        <h1><i class="fas fa-bolt"></i> Weather Forecast App</h1>
         <div>
             <form class="form-inline" action="process.php" method="post">
                 <div class="form-group mx-sm-3 mb-2">
